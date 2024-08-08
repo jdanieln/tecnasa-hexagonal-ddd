@@ -3,9 +3,11 @@ package com.example.hexagonal.user.application.service;
 import com.example.hexagonal.user.application.query.GetUserByIdQuery;
 import com.example.hexagonal.user.domain.model.User;
 import com.example.hexagonal.user.domain.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserQueryService {
     private final UserRepository _userRepository;
 
@@ -15,7 +17,7 @@ public class UserQueryService {
 
     public User getUserById(GetUserByIdQuery query) {
         return _userRepository.findById(query.id())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"))
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
 
     public List<User> getUsers() {

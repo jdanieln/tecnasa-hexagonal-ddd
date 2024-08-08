@@ -5,7 +5,9 @@ import com.example.hexagonal.user.application.command.DeleteUserCommand;
 import com.example.hexagonal.user.application.command.UpdateUserCommand;
 import com.example.hexagonal.user.domain.model.User;
 import com.example.hexagonal.user.domain.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserCommandService {
 
     private final UserRepository _userRepository;

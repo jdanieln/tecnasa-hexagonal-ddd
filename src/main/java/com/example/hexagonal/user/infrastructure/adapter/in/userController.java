@@ -13,12 +13,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class userController {
+
     private final UserCommandService _userCommandService;
     private final UserQueryService _userQueryService;
 
     public userController(UserCommandService userCommandService, UserQueryService userQueryService) {
-        _userCommandService = userCommandService;
-        _userQueryService = userQueryService;
+        this._userCommandService = userCommandService;
+        this._userQueryService = userQueryService;
     }
 
     @PostMapping
