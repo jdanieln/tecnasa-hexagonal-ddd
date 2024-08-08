@@ -1,4 +1,4 @@
 package com.example.hexagonal.user.application.query;
 
-public record GetUserQuery (int id) {
+public record GetUserByIdQuery(Long id) {
 }
