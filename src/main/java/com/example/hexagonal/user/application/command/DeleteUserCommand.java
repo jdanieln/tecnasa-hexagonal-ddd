@@ -1,4 +1,4 @@
 package com.example.hexagonal.user.application.command;
 
-public record DeleteUserCommand (int id) {
+public record DeleteUserCommand (Long id) {
 }

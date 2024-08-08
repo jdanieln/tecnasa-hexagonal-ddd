@@ -1,12 +1,11 @@
 package com.example.hexagonal.user.application.query;
 
-import com.example.hexagonal.user.domain.User;
-import com.example.hexagonal.user.domain.UserRepository;
+import com.example.hexagonal.user.domain.model.User;
+import com.example.hexagonal.user.domain.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 public class UserQueryHandler {
