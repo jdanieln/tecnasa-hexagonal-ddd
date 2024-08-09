@@ -1,6 +1,7 @@
 package com.example.hexagonal.user.application.service;
 
 import com.example.hexagonal.user.application.query.GetUserByIdQuery;
+import com.example.hexagonal.user.application.query.GetUserByUsernameQuery;
 import com.example.hexagonal.user.domain.model.User;
 import com.example.hexagonal.user.domain.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,10 @@ public class UserQueryService {
 
     public List<User> getUsers() {
         return _userRepository.findAll();
+    }
+
+    public User getUserByUsername(GetUserByUsernameQuery query) {
+        return _userRepository.findByUsername(query.username())
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }
