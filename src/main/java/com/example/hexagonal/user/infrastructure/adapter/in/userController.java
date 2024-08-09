@@ -1,6 +1,7 @@
 package com.example.hexagonal.user.infrastructure.adapter.in;
 
 import com.example.hexagonal.user.application.command.CreateUserCommand;
+import com.example.hexagonal.user.application.command.DeleteUserCommand;
 import com.example.hexagonal.user.application.command.UpdateUserCommand;
 import com.example.hexagonal.user.application.query.GetUserByIdQuery;
 import com.example.hexagonal.user.application.service.UserCommandService;
@@ -40,5 +41,10 @@ public class userController {
     @GetMapping
     public List<User> getUsers() {
         return _userQueryService.getUsers();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        _userCommandService.deleteUser(new DeleteUserCommand(id));
     }
 }
